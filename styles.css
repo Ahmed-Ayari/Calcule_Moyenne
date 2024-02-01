@@ -1,0 +1,62 @@
+body{
+    background-color: #0e0d0d;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #f7f7f7;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.module{
+    background-color: rgb(35, 21, 48);
+    border: rgb(0, 0, 0) solid 1px;
+}
+
+.note{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input{
+    height: 20px;
+    width: 50px;
+    margin-top: 9px;
+}
+
+.MoyenneModule{
+    background-color: rgb(48, 85, 196);
+    color: white;
+    width: 200px;
+    margin-left: auto;
+}
+
+.resultat{
+    background-color: rgb(32, 36, 85);
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    color: white;
+}
+
+.nomMatiere{
+    width: 80px;
+    text-align: center;
+    background-color: salmon;
+}
+
+.calculer{
+    color: white;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(82, 80, 92);
+    margin-top: 15px;
+}
+
+#resultat{
+    background-color: rgb(32, 36, 85);
+    border: rgb(0, 0, 0) solid 1px;
+}

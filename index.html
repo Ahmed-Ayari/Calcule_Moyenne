@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moyenne</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Calcule moyenne 2IM S1</h1>
+    </header>
+    <section>
+        <div id="ModuleP" class="module">
+            <div id="Proba" class="matiere">
+                <p class="nomMatiere">Proba</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsproba" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexproba" min="0" max="20">
+                </div>
+            </div>
+            <p id="MMP" class="MoyenneModule">Moyenne Module: </p>
+        </div>
+        <div id="ModuleGT" class="module">
+            <div id="Graphe" class="matiere">
+                <p class="nomMatiere">Graphe</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsGO" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="notexGO" min="0" max="20">
+                </div>
+            </div>
+            <div id="TLA" class="matiere">
+                <p class="nomMatiere">TLA</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsTLA" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexTLA" min="0" max="20">
+                </div>
+            </div>
+            <p id="MMGT" class="MoyenneModule">Moyenne Module: </p>
+        </div>
+        <div id="ModuleBR" class="module">
+            <div id="BD" class="matiere">
+                <p class="nomMatiere">BD</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsBD" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexBD" min="0" max="20">
+                </div>
+            </div>
+            <div id="Réseau" class="matiere">
+                <p class="nomMatiere">Réseau</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsreseau" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexreseau" min="0" max="20"> 
+                </div>
+            </div>
+            <p id="MMBR" class="MoyenneModule">Moyenne Module: </p>
+        </div>
+        <div id="ModuleJS" class="module">
+            <div id="Java" class="matiere">
+                <p class="nomMatiere">Java</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsJava" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexJava" min="0" max="20">
+                </div>
+            </div>
+            <div id="Conception" class="matiere">
+                <p class="nomMatiere">Conception</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsSI" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexSI" min="0" max="20">
+                </div>
+            </div>
+            <p id="MMJS" class="MoyenneModule">Moyenne Module: </p>
+        </div>
+        <div id="ModuleOption" class="module">
+            <div id="MathMM" class="matiere">
+                <p class="nomMatiere">Math</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsMath" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexMath" min="0" max="20">
+                </div>
+            </div>
+            <div id="Physique" class="matiere">
+                <p class="nomMatiere">Physique</p>
+                <div class="note">
+                    <p>DS</p>
+                    <input type="number" class="input" id="notedsPhy" min="0" max="20">
+                    <p>Examen</p>
+                    <input type="number" class="input" id="noteexPhy" min="0" max="20"> 
+                </div>
+            </div>
+            <p id="MMOption" class="MoyenneModule">Moyenne Module: </p>
+        </div>
+        <div id="ModuleCC" class="module">
+            <div id="Anglais" class="matiere">
+                <p class="nomMatiere">Anglais</p>
+                <div class="note">
+                    <p>Orale</p>
+                    <input type="number" class="input" id="noteorEng" min="0" max="20">
+                    <p>DS 1</p>
+                    <input type="number" class="input" id="notedsEng1" min="0" max="20">
+                    <p>DS 2</p>
+                    <input type="number" class="input" id="notedsEng2" min="0" max="20">
+                </div>
+            </div>
+            <div id="GE" class="matiere">
+                <p class="nomMatiere">Gestion</p>
+                <div class="note">
+                    <p>Orale</p>
+                    <input type="number" class="input" id="noteorGE" min="0" max="20">
+                    <p>DS 1</p>
+                    <input type="number" class="input" id="notedsGE1" min="0" max="20">
+                    <p>DS 2</p>
+                    <input type="number" class="input" id="notedsGE2" min="0" max="20">
+                </div>
+            </div>
+            <p id="MMCC" class="MoyenneModule">Moyenne Module: </p>
+        </div>
+    </section>
+    <section id="resultat">
+        <div class="resultat">
+            <p id="moyenne">Moyenne:</p>
+            <p id="credit">Crédits:</p>
+        </div>
+        <button class="calculer" onclick="calculer()">Calculer</button>
+    </section>
+    <footer>
+        <p>© 2023 - 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
