@@ -40,10 +40,10 @@ let credit = document.getElementById('credit');
 let coeffProba = 2;
 let coeffGO = 1;
 let coeffTLA = 1;
-let coeffBD = 1;
+let coeffBD = 1.5;
 let coeffreseau = 1;
 let coeffJava = 2;
-let coeffSI = 1;
+let coeffSI = 1.5;
 let coeffMath = 1.5;
 let coeffPhy = 1.5;
 let coeffEng = 1;
@@ -55,6 +55,7 @@ let coeffMod3 = coeffBD + coeffreseau;
 let coeffMod4 = coeffJava + coeffSI;
 let coeffMod5 = coeffMath + coeffPhy;
 let coeffMod6 = coeffEng + coeffGE;
+let coeffTotal = coeffMod1 + coeffMod2 + coeffMod3 + coeffMod4 + coeffMod5 + coeffMod6
     //Coefficients des notes
 let coeffDS = 0.3;
 let coeffEX = 0.7;
@@ -64,8 +65,8 @@ let coeffDs2 = 0.4;
 
 //Calcul des moyennes
     //Calcul des moyennes des modules RM
-function calculerM(ds1, ex1, ds2, ex2){
-    return MM = ( (ds1 * coeffDS + ex1 * coeffEX) + (ds2 * coeffDS + ex2 * coeffEX) )/ 2;
+function calculerM(ds1, ex1, ds2, ex2, coef1, coef2){
+    return MM = ( ((ds1 * coeffDS + ex1 * coeffEX)*coef1) + ((ds2 * coeffDS + ex2 * coeffEX)*coef2 ))/ (coef1+coef2);
 }
     //Calcul des moyennes des modules CC
 function calculerMCC(or1, ds1, ds2, or2, ds3, ds4){
@@ -74,14 +75,20 @@ function calculerMCC(or1, ds1, ds2, or2, ds3, ds4){
 
 function calculer(){
     Clear();
+    let m1 = calculerM(DSProba.value, EXProba.value, 0, 0, coeffProba, 0);
+    let m2 = calculerM(DSGO.value, EXGO.value, DSTLA.value, EXTLA.value, coeffGO, coeffTLA);
+    let m3 = calculerM(DSBD.value, EXBD.value, DSreseau.value, EXreseau.value, coeffBD, coeffreseau);
+    let m4 = calculerM(DSJava.value, ExJava.value, DSSI.value, EXSI.value, coeffJava, coeffSI);
+    let m5 = calculerM(DSMath.value, EXMath.value, DSPhy.value, EXPhy.value, coeffMath, coeffPhy);
+    let m6 = calculerMCC(OrEng.value, DSEng1.value, DSEng2.value, OrGE.value, DSGE1.value, DSGE2.value);
 
-    module1.innerHTML += calculerM(DSProba.value, EXProba.value, 0, 0)*2;
-    module2.innerHTML += calculerM(DSGO.value, EXGO.value, DSTLA.value, EXTLA.value);
-    module3.innerHTML += calculerM(DSBD.value, EXBD.value, DSreseau.value, EXreseau.value);
-    module4.innerHTML += calculerM(DSJava.value, ExJava.value, DSSI.value, EXSI.value);
-    module5.innerHTML += calculerM(DSMath.value, EXMath.value, DSPhy.value, EXPhy.value);
-    module6.innerHTML += calculerMCC(OrEng.value, DSEng1.value, DSEng2.value, OrGE.value, DSGE1.value, DSGE2.value);
-
+    module1.innerHTML += m1.toFixed(2)
+    module2.innerHTML += m2.toFixed(2)
+    module3.innerHTML += m3.toFixed(2)
+    module4.innerHTML += m4.toFixed(2)
+    module5.innerHTML += m5.toFixed(2)
+    module6.innerHTML += m6.toFixed(2)
+    moyenne.innerHTML += ((m1*coeffMod1 + m2*coeffMod2 + m3*coeffMod3 + m4*coeffMod4 + m5*coeffMod5 + m6*coeffMod6)/ coeffTotal).toFixed(2)
 }
 
 function Clear(){
@@ -95,3 +102,4 @@ function Clear(){
     moyenne.innerHTML = "Moyenne: ";
     credit.innerHTML = "Credit: ";
 }
+
