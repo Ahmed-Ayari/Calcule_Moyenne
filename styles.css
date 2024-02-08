@@ -60,3 +60,15 @@ body{
     background-color: rgb(32, 36, 85);
     border: rgb(0, 0, 0) solid 1px;
 }
+footer{
+    color: white;
+    bottom: 0;
+    width: 100%;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    gap: 60%;
+}
+#sphynx{
+    text-decoration: none;
+}
